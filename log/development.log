@@ -509,3 +509,888 @@ Started GET "/" for 127.0.0.1 at Mon Jun 27 16:09:15 +0200 2011
   Processing by WelcomeController#index as HTML
 Rendered welcome/index.html.erb within layouts/application (15.6ms)
 Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 31.2ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (109.4ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (328.1ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (46.9ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (62.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_info'
+ 
+  [1m[36mSQL (15.6ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (62.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110618233700)
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (312.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(128) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (46.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_users_on_email on users (0.0ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 16422
+ AND a.attnum IN (2)
+[0m
+  [1m[35mSQL (31.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (15.6ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (15.6ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110618233700')
+  [1m[36mPK and serial sequence (0.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (15.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (15.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_users_on_email on users (0.0ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 16422
+ AND a.attnum IN (2)
+[0m
+  [1m[35mColumns for index index_users_on_reset_password_token on users (0.0ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 16422
+ AND a.attnum IN (4)
+
+
+Started GET "/user" for 127.0.0.1 at Tue Jun 28 15:18:05 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Tue Jun 28 15:18:09 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Tue Jun 28 15:18:17 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/shared/_links.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/sessions/new.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 219ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Tue Jun 28 15:18:31 +0200 2011
+
+ActionController::RoutingError (No route matches "/index"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/index/home" for 127.0.0.1 at Tue Jun 28 15:18:36 +0200 2011
+
+ActionController::RoutingError (No route matches "/index/home"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Tue Jun 28 15:18:39 +0200 2011
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Tue Jun 28 15:18:43 +0200 2011
+
+ActionController::RoutingError (No route matches "/home/index"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Tue Jun 28 15:18:49 +0200 2011
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at Tue Jun 28 15:19:09 +0200 2011
+
+ActionController::RoutingError (No route matches "/welcome"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/index/welcome" for 127.0.0.1 at Tue Jun 28 15:19:16 +0200 2011
+
+ActionController::RoutingError (No route matches "/index/welcome"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at Tue Jun 28 15:19:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/welcome"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:19:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at Tue Jun 28 15:20:05 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/" for 127.0.0.1 at Tue Jun 28 15:20:09 +0200 2011
+
+ActionController::RoutingError (No route matches "/welcome"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:46:15 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:50:41 +0200 2011
+  [1m[36mSQL (15.6ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:50:45 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:50:47 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:51:48 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 15:51:49 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?set_locale=it" for 127.0.0.1 at Tue Jun 28 15:52:08 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"set_locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:29 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:43 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:44 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:45 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:52 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:52:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:02 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:09 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:13 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:26 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:48 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:53:58 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:54:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:54:28 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:54:29 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:55:08 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:56:57 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:56:58 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:57:06 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:57:17 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:57:36 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+ERROR: compiling _app_views_welcome_index_html_erb__651846141_37231716_0 RAISED compile error
+C:/Sites/bmyb/app/views/welcome/index.html.erb:3: syntax error, unexpected '=', expecting kEND
+'); ="ciaociao" 
+     ^
+Function body:           def _app_views_welcome_index_html_erb__651846141_37231716_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "welcome/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>BmyB</h1>
+<p>Find me in app/views/welcome/index.html.erb
+'); ="ciaociao" 
+@output_buffer.safe_concat('</p>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/Sites/bmyb/app/views/welcome/index.html.erb:8:in `compile'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__557109792__process_action__199225275__callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:35:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered welcome/index.html.erb within layouts/application (46.9ms)
+Completed   in 94ms
+
+ActionView::Template::Error (compile error
+C:/Sites/bmyb/app/views/welcome/index.html.erb:3: syntax error, unexpected '=', expecting kEND
+'); ="ciaociao" 
+     ^):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <% ="ciaociao" %>
+    4: </p>
+  app/views/welcome/index.html.erb:8:in `compile'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:57:55 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:58:26 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:58:44 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:58:58 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:59:09 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:59:16 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:59:24 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:59:29 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 15:59:35 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 16:02:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Tue Jun 28 16:02:32 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 16:05:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+ERROR: compiling _app_views_welcome_index_html_erb__651846141_37478436_0 RAISED compile error
+C:/Sites/bmyb/app/views/welcome/index.html.erb:3: syntax error, unexpected ',', expecting ')'
+...ut_buffer.append= ( t(:hello),locale );@output_buffer.safe_c...
+                              ^
+Function body:           def _app_views_welcome_index_html_erb__651846141_37478436_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "welcome/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>BmyB</h1>
+<p>Find me in app/views/welcome/index.html.erb
+');@output_buffer.append= ( t(:hello),locale );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</p>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: C:/Sites/bmyb/app/views/welcome/index.html.erb:9:in `compile'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:441:in `_run__557109792__process_action__199225275__callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:35:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:34:in `catch'
+C:/Sites/bmyb/rake/ruby/1.8/gems/warden-1.0.4/lib/warden/manager.rb:34:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+C:/Sites/bmyb/rake/ruby/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/Sites/bmyb/rake/ruby/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (compile error
+C:/Sites/bmyb/app/views/welcome/index.html.erb:3: syntax error, unexpected ',', expecting ')'
+...ut_buffer.append= ( t(:hello),locale );@output_buffer.safe_c...
+                              ^):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello),locale %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:9:in `compile'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jun 28 16:05:37 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Tue Jun 28 16:05:48 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 16:05:52 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
