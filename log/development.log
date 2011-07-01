@@ -1394,3 +1394,625 @@ Started GET "/?locale=it" for 127.0.0.1 at Tue Jun 28 16:05:52 +0200 2011
   Parameters: {"locale"=>"it"}
 Rendered welcome/index.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 09:55:07 +0200 2011
+  [1m[36mSQL (109.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (15.6ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (328.2ms)
+Completed   in 375ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36860304_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:08:04 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (31.3ms)
+Completed   in 78ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36326904_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.1ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:08:45 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: "Il tuo account &egrave; stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37831536_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:09:18 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: 'Il tuo account è stato aggiornato.''):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37331856_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:09:54 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36862764_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:11:44 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: '):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36400992_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:11:46 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      updated: '):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37740744_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:12:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37207464_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:14:52 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36706320_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 10:15:46 +0200 2011
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 109ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_31603992_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:16:15 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 63ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37494276_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:42:36 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (can not load translations from C:/Sites/bmyb/config/locales/devise.it.yml, expected it to return a hash, but does not):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36993444_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:42:44 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:43:32 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:43:48 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:43:59 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:44:12 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:44:19 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:44:26 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account è stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37923948_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:44:38 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: "Il tuo account e' stato aggiornato."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37351284_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:44:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 33, col 6: `      updated: ""'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36828636_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:45:02 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 34, col 6: `      destroyed: "Arrivederci! L'account è stato cancellato. Speriamo di rivederci presto."'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_36379068_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (62.5ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (93.8ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:45:33 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 47ms
+
+ActionView::Template::Error (syntax error on line 38, col 5: `     omniauth_callbacks:'):
+    1: <h1>BmyB</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb
+    3: <%= t(:hello) %>
+    4: 
+    5: </p>
+  app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb__651846141_37774728_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 10:45:47 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Fri Jul 01 10:45:58 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Fri Jul 01 11:25:38 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/" for 127.0.0.1 at Fri Jul 01 11:25:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/" for 127.0.0.1 at Fri Jul 01 11:37:17 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/" for 127.0.0.1 at Fri Jul 01 11:37:21 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 11:37:24 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 125ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Fri Jul 01 11:37:28 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+Translating routes (default locale: it)
+Translating routes (default locale: it)
+Translating routes (default locale: it)
+Translating routes (default locale: it)
+
+
+Started GET "/utenti" for 127.0.0.1 at Fri Jul 01 12:30:22 +0200 2011
+Translating routes (default locale: it)
+
+ActionController::RoutingError (No route matches "/utenti"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Jul 01 12:30:29 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 12:30:34 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Fri Jul 01 12:30:37 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Fri Jul 01 12:30:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Fri Jul 01 12:31:26 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Fri Jul 01 12:31:31 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Jul 01 12:31:36 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 12:31:42 +0200 2011
+
+ActionController::RoutingError (No route matches "/users/sign_in"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Fri Jul 01 12:31:48 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Fri Jul 01 12:31:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Fri Jul 01 12:32:00 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.6ms)
+Translating routes (default locale: it)
+Translating routes (default locale: it)
+
+
+Started GET "/en" for 127.0.0.1 at Fri Jul 01 14:15:27 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Fri Jul 01 14:15:30 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jul 01 14:15:34 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Jul 01 14:15:39 +0200 2011
+
+ActionController::RoutingError (No route matches "/users/sign_in"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at Fri Jul 01 14:15:44 +0200 2011
+
+ActionController::RoutingError (No route matches "/user/sign_in"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/user/sign_in" for 127.0.0.1 at Fri Jul 01 14:15:49 +0200 2011
+
+ActionController::RoutingError (No route matches "/en/user/sign_in"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/en/users/sign_in" for 127.0.0.1 at Fri Jul 01 14:15:59 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+default_url_options is passed options: {}
+  [1m[36mSQL (640.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+default_url_options is passed options: {}
+default_url_options is passed options: {}
+default_url_options is passed options: {}
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/shared/_links.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/sessions/new.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 766ms (Views: 93.8ms | ActiveRecord: 640.6ms)
+
+
+Started GET "/it/utenti/accesso" for 127.0.0.1 at Fri Jul 01 14:16:18 +0200 2011
+
+ActionController::RoutingError (No route matches "/it/utenti/accesso"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/utenti/accesso" for 127.0.0.1 at Fri Jul 01 14:16:30 +0200 2011
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"it"}
+default_url_options is passed options: {}
+  [1m[35mSQL (0.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+default_url_options is passed options: {}
+default_url_options is passed options: {}
+default_url_options is passed options: {}
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/shared/_links.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/sessions/new.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 203ms (Views: 140.6ms | ActiveRecord: 0.0ms)

@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'pg'
 gem 'devise'
+gem 'translate_routes'
 
 # Use unicorn as the web server
 # gem 'unicorn'

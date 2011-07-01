@@ -4,6 +4,9 @@ Bmyb::Application.routes.draw do
 
   devise_for :users
 
+  #URL translation
+  ActionDispatch::Routing::Translator.translate_from_file('config','i18n-routes.yml')
+
   #devise
 
   # The priority is based upon order of creation:
