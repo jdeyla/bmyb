@@ -38,6 +38,7 @@ GEM
       warden (~> 1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    http_accept_language (1.0.1)
     i18n (0.5.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -82,6 +83,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise
+  http_accept_language
   pg
   rails (= 3.0.7)
   translate_routes

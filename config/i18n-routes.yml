@@ -2,10 +2,13 @@ en:
   # you can leave empty locales, for example the default one
 it:
   en: it
-  sign_in: accesso
-  sign_up: registrazione
-  sign_out: uscita
-  users: utenti
-  cancel: annulla
-  edit: modifica
-  new: nuova
+  
+# tentativo non convincente: tradurre tutti i percorsi. L'app sarà in inglese di default
+
+  #sign_in: accesso
+  #sign_up: registrazione
+  #sign_out: uscita
+  #users: utenti
+  ##cancel: annulla
+  ##edit: modifica
+  #new: nuova
