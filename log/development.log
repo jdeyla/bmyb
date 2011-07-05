@@ -2016,3 +2016,907 @@ default_url_options is passed options: {}
 Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/shared/_links.erb (0.0ms)
 Rendered rake/ruby/1.8/gems/devise-1.3.4/app/views/devise/sessions/new.html.erb within layouts/application (93.8ms)
 Completed 200 OK in 203ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+Translating routes (default locale: it)
+Translating routes (default locale: it)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:08:59 +0200 2011
+  [1m[36mSQL (78.1ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (15.6ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (343.7ms)
+Completed 200 OK in 391ms (Views: 390.6ms | ActiveRecord: 93.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:16:24 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:17:03 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:17:24 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:17:34 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:18:16 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:18:17 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:18:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x471ac98>):
+  app/controllers/application_controller.rb:24:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:18:42 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x45d8510>):
+  app/controllers/application_controller.rb:24:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:18:56 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 0ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x44f8a58>):
+  app/controllers/application_controller.rb:15:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.1ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (109.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:20:38 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 16ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x47ce908>):
+  app/controllers/application_controller.rb:15:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:26:39 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 16ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x4695ee8>):
+  app/controllers/application_controller.rb:15:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:29:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 0ms
+
+NameError (undefined local variable or method `available' for #<WelcomeController:0x4575180>):
+  app/controllers/application_controller.rb:24:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:30:12 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x449de28>):
+  app/controllers/application_controller.rb:24:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.1ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (109.4ms)
+Translating routes (default locale: it)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:33:05 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as 
+Completed   in 16ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4305120>):
+  app/controllers/application_controller.rb:23:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:35:37 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x475f818>):
+  app/controllers/application_controller.rb:24:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 11:49:48 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 16ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4633c98>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 12:49:25 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4538eb0>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+Translating routes (default locale: it)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 15:30:06 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4300848>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 15:30:54 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NameError (undefined local variable or method `http_accept_language' for #<WelcomeController:0x4765170>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 15:31:18 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4626258>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 15:31:27 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NameError (undefined local variable or method `http_accept_language' for #<WelcomeController:0x4539330>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 15:31:46 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 78ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x447c120>):
+  app/controllers/application_controller.rb:25:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:00:29 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4730dc0>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:00:57 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x46042e0>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:02:03 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for HttpAcceptLanguage:Module):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:02:25 +0200 2011
+
+LoadError (no such file to load -- HttpAcceptLanguage):
+  app/controllers/application_controller.rb:1
+  app/controllers/welcome_controller.rb:1
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+Translating routes (default locale: it)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:04:24 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x4304e20>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:05:32 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 16ms
+
+NoMethodError (undefined method `compatible_language_from' for #<WelcomeController:0x47573d0>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:09:17 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<WelcomeController:0x4612ce0>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:09:49 +0200 2011
+  Processing by WelcomeController#index as HTML
+Completed   in 0ms
+
+NoMethodError (undefined method `compatible_language_from' for #<ActionDispatch::Request:0x451f0f8>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:10:43 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 203ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:10:58 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:11:02 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:11:14 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:11:17 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:12:35 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:12:49 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:12:56 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:16:39 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (62.5ms)
+Completed   in 203ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x4699a70>:0x4698570>):
+    3: <%= t(:hello) %>
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: Preferred = <%= user_preferred_languages %>
+    7: 
+    8: </p>
+  app/views/welcome/index.html.erb:6:in `_app_views_welcome_index_html_erb__651846141_37009812_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (93.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:17:46 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 172ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x477b838>:0x477a308>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: <% require 'http_accept_language' %>
+    7: Preferred = <%= user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_37471500_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:18:34 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 156ms
+
+ActionView::Template::Error (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x45a7880>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: <% require "http_accept_language" %>
+    7: Preferred = <%= request.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_36454860_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (93.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:18:40 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 141ms
+
+ActionView::Template::Error (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x479ee48>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: 
+    7: Preferred = <%= request.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_37478964_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:26:31 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 78ms
+
+ActionView::Template::Error (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x4608258>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: 
+    7: Preferred = <%= request.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_36669864_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:27:10 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 94ms
+
+ActionView::Template::Error (undefined local variable or method `http_accept_language' for #<#<Class:0x44d1ef0>:0x44d0cf0>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: 
+    7: Preferred = <%= http_accept_language.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_36077100_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:27:27 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 78ms
+
+ActionView::Template::Error (undefined method `http_accept_language' for #<ActionDispatch::Request:0x46b2df0>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: 
+    7: Preferred = <%= request.http_accept_language.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_37009140_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:27:34 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 78ms
+
+ActionView::Template::Error (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x455a648>):
+    4: Locale = <%= locale %><br>
+    5: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    6: 
+    7: Preferred = <%= request.user_preferred_languages %>
+    8: 
+    9: </p>
+  app/views/welcome/index.html.erb:7:in `_app_views_welcome_index_html_erb__651846141_36309060_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:28:04 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed   in 78ms
+
+ActionView::Template::Error (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x445d010>):
+    7: Locale = <%= locale %><br>
+    8: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    9: 
+    10: Preferred = <%= request.user_preferred_languages %>
+    11: 
+    12: </p>
+  app/views/welcome/index.html.erb:10:in `_app_views_welcome_index_html_erb__651846141_37892076_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:28:17 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 94ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x46af130>:0x46adf48>):
+    7: Locale = <%= locale %><br>
+    8: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    9: 
+    10: Preferred = <%= user_preferred_languages %>
+    11: 
+    12: </p>
+  app/views/welcome/index.html.erb:10:in `_app_views_welcome_index_html_erb__651846141_37051560_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.5ms)
+Translating routes (default locale: it)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:51:11 +0200 2011
+  [1m[36mSQL (0.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.0ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.0ms)[0m  SHOW TIME ZONE
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (93.8ms)
+Completed   in 328ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x42c6ba0>:0x42c4bf0>):
+    7: Locale = <%= locale %><br>
+    8: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    9: 
+    10: Preferred = <%= user_preferred_languages %>
+    11: 
+    12: </p>
+  app/views/welcome/index.html.erb:10:in `_app_views_welcome_index_html_erb__651846141_35002632_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:51:59 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 172ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x45ebaa0>:0x45e7ca8>):
+    7: Locale = <%= locale %><br>
+    8: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    9: 
+    10: Preferred = <%= user_preferred_languages %>
+    11: 
+    12: </p>
+  app/views/welcome/index.html.erb:10:in `_app_views_welcome_index_html_erb__651846141_36648312_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:52:25 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed   in 188ms
+
+ActionView::Template::Error (undefined local variable or method `user_preferred_languages' for #<#<Class:0x46963f8>:0x46952b8>):
+    7: Locale = <%= locale %><br>
+    8: Request = <%= request.env['HTTP_ACCEPT_LANGUAGE']%> <br>
+    9: 
+    10: Preferred = <%= user_preferred_languages %>
+    11: 
+    12: </p>
+  app/views/welcome/index.html.erb:10:in `_app_views_welcome_index_html_erb__651846141_37003020_0'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (62.5ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:53:25 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x47b0f80>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:54:17 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x464ee48>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:54:37 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `user_preferred_languages' for #<ActionDispatch::Request:0x45442e0>):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:55:00 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 0ms
+
+NoMethodError (undefined method `user_preferred_languages' for HttpAcceptLanguage:Module):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.1ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (93.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:55:21 +0200 2011
+  Processing by WelcomeController#index as 
+Completed   in 16ms
+
+NoMethodError (undefined method `user_preferred_languages' for HttpAcceptLanguage:Module):
+  app/controllers/application_controller.rb:27:in `set_locale'
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:55:43 +0200 2011
+
+SyntaxError (C:/Sites/bmyb/app/controllers/application_controller.rb:87: syntax error, unexpected kEND, expecting $end):
+  app/controllers/welcome_controller.rb:1
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:56:01 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 172ms (Views: 171.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:56:17 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Tue Jul 05 16:56:26 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:56:33 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:56:37 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:57:16 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:57:22 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:57:59 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:58:18 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 16:59:11 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 172ms (Views: 171.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 17:00:33 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 234ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/it" for 127.0.0.1 at Tue Jul 05 17:00:38 +0200 2011
+
+ActionController::RoutingError (No route matches "/it"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Tue Jul 05 17:00:44 +0200 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered rake/ruby/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jul 05 17:00:53 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at Tue Jul 05 17:00:59 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=it" for 127.0.0.1 at Tue Jul 05 17:01:03 +0200 2011
+  Processing by WelcomeController#index as HTML
+  Parameters: {"locale"=>"it"}
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 17:01:08 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 63ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 17:01:47 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 156ms (Views: 156.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 17:02:04 +0200 2011
+  Processing by WelcomeController#index as HTML
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jul 05 17:02:08 +0200 2011
+  Processing by WelcomeController#index as 
+default_url_options is passed options: {}
+Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 172ms (Views: 171.9ms | ActiveRecord: 0.0ms)
